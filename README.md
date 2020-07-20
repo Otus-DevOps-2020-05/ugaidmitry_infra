@@ -50,4 +50,51 @@ bastion_IP = 35.204.48.189 someinternalhost_IP = 10.164.0.3
 
 -5 Использовал модуль storage-bucket от SweetOPS (https://github.com/SweetOps/terraform-google-storage-bucket) для создания бакетов, в которых будут храниться стейт файлы stage и prod окружений
 
+Д.3 11
+
+
+-1 Установлен Ansible для выполнения различных команд
+
+-2 Созданы файлы invertory (`yml`,` json`)
+
+-3 Создан конфигурационный файл `ansible.cfg` со значениями по умолчанию для проекта
+
+-4 Создан ansible playbook, описанный в `clone.yml`, для проверки поведения ansible для повторяющихся задач.
+
+
+
+Д.З 12
+
+
+    [+ ] Основное ДЗ
+
+ 
+  - Созданы ansible playbook:
+
+  - reddit_app_one_play
+  - reddit_app_multiple_plays
+  - app.yml, db.yml, deploy.yml  Плейбуки встроены в `site.yml` для последовательной установки Reddit.
+  - packer_db.yml, packer_app.yml созданы для использовании в PACKER
+  - packer/app.json , packer/db.json обновлены для использования ansible playbook в место баш скриптов
+
+Д.З 13
+
+
+    [+ ] Основное ДЗ
+
+
+  - созданы ansible-роли app, db, users (создаются пользователи для {prod,stage} окружений)
+  - созданы окружения {prod,stage}
+  - организован каталог ansible
+        плейбуки перенесены в /ansible/playbooks
+        прочие файлы перенесены в /ansible/old
+  - созданы файл конфигурации и инвентори файлы (ini, yml, json*) для ansible
+
+Д.З 14
+
+
+- создано локальное окружение с использованием Vagrnat, в качестве провижионера используется ansible;
+- доработаны роли для работы с Vagrant, доработаны json файлы с конфигами packer для совместимости;
+- создано локальное окружение пользователя для работы с molecule
+- созданы тесты и протестирована конфигурация
 
